@@ -14,6 +14,9 @@ import os
 
 # init ENV vars here
 MTA_API_KEY = os.environ.get('MTA_API_KEY', '')
+# Redis variables
+REDIS_HOST = os.environ.get('REDIS_HOST', '127.0.0.1')
+REDIS_PORT = os.environ.get('REDIS_PORT', '6379')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'arrivals',
+    'background_task',
     'rider',
     'transfer_zone',
     'station',
